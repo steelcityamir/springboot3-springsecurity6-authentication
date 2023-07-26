@@ -16,7 +16,7 @@ git clone https://github.com/codebyamir/springboot3-springsecurity6-authenticati
 ### 2. Navigate to the project directory:
 
 ```bash
-cd springboot3-springsecurity6-authentication
+cd springboot3-springsecurity6-authentication/demo/
 ```
 
 ### 3. Build the project:
