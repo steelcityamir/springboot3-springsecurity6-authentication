@@ -36,7 +36,7 @@ This will start the application it will be accessible at `http://localhost:8080`
 
 The app runs an in-memory H2 database and comes seeded with some sample users.
 
-- Users are stored in the `customer` table.
+- Users are stored in the `account` table.
 - Login attempts are stored in the `login` table.
 
 ## Pages
@@ -46,6 +46,15 @@ The app runs an in-memory H2 database and comes seeded with some sample users.
 - URL: http://localhost:8080/login
 - Username: `admin@example.com`
 - Password: `admin`
+
+
+<img width="1469" alt="Screenshot 2023-07-26 at 1 49 39 PM" src="https://github.com/codebyamir/springboot3-springsecurity6-authentication/assets/54147931/92fa6c26-8c82-413a-989e-71476548ecaf">
+
+### Register page
+
+- URL: http://localhost:8080/register
+<img width="1465" alt="Screenshot 2023-07-26 at 1 49 51 PM" src="https://github.com/codebyamir/springboot3-springsecurity6-authentication/assets/54147931/4840f89f-aae0-4e4b-afd6-e656399ebb72">
+
 
 
 
