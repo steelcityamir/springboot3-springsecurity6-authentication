@@ -29,7 +29,8 @@ public class RegisterController {
     public String registerAccount(Account account, Model model) {
         try {
             accountService.registerAccount(account);
-            return "redirect:/login";
+            model.addAttribute("successMessage", "Your account has been successfully created. We've sent you an email confirmation.  Click the link in the email to verify your email address.");
+            return "register";
         } catch (AccountExistsException e) {
             model.addAttribute("errorMessage", e.getMessage());
             return "register";

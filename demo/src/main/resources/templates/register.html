@@ -33,6 +33,11 @@
               <div th:text="${errorMessage}"></div>
             </div>
 
+            <!-- Show error when errorMessage exists -->
+            <div th:if="${successMessage}" class="alert alert-success" role="alert">
+              <div th:text="${successMessage}"></div>
+            </div>
+
             <div class="form-outline mb-4">
               <label class="form-label" for="email">Email</label>
               <input type="email" id="email" name="email" required autofocus class="form-control form-control-lg" />
