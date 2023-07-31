@@ -53,7 +53,8 @@ The app runs an in-memory H2 database and comes seeded with some sample users.
 ### Register page
 
 - URL: http://localhost:8080/register
-<img width="1465" alt="Screenshot 2023-07-26 at 1 49 51 PM" src="https://github.com/codebyamir/springboot3-springsecurity6-authentication/assets/54147931/4840f89f-aae0-4e4b-afd6-e656399ebb72">
+![image](https://github.com/codebyamir/springboot3-springsecurity6-authentication/assets/54147931/f22717bd-bc81-4732-9646-8a6ab3ddfd02)
+
 
 ### Forgot Password page
 
