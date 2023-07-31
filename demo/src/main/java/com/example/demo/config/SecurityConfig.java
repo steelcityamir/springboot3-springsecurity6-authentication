@@ -49,6 +49,8 @@ public class SecurityConfig extends AbstractHttpConfigurer<SecurityConfig, HttpS
                         headers.frameOptions(frameOptionsConfig -> frameOptionsConfig.sameOrigin()))
                 .authorizeHttpRequests((requests) -> requests
                         .requestMatchers(mvc.pattern("/login")).permitAll()
+                        .requestMatchers(mvc.pattern("/forgot")).permitAll()
+                        .requestMatchers(mvc.pattern("/reset")).permitAll()
                         .requestMatchers(mvc.pattern("/register")).permitAll()
                         .requestMatchers(mvc.pattern("/styles/**")).permitAll()
                         .requestMatchers(mvc.pattern("/images/**")).permitAll()
