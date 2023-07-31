@@ -6,5 +6,6 @@ public interface AccountService {
     Account registerAccount(Account account);
     boolean accountExists(String email);
     boolean activeAccountExists(String email);
+    void enableAccount(String email);
 }
 

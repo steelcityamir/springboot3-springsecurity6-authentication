@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Email verify</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/styles/main.css}" />
+    <style>
+        .gradient-bg {
+            background: linear-gradient(to right, #f3e7e9, #e3eeff 100%);
+        }
+
+        @media (min-width: 1025px) {
+            .h-custom-2 {
+                height: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+
+    <section class="vh-100">
+        <div class="row">
+            <div class="col-xs-12 text-black">
+                <div class="p-5">
+
+                        <!-- Only show form if tokenError does not exist -->
+                        <div th:unless="${tokenError}">
+                            <div class="alert alert-success" role="alert">
+                                <div>Your email address has been verified. You can now <a href="/login">Sign In</a>.</div>
+                            </div>
+                        </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>

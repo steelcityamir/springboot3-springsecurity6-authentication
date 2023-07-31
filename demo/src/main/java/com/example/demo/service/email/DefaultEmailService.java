@@ -56,5 +56,31 @@ public class DefaultEmailService implements EmailService {
         message.setText(bodyBuilder.toString());
         emailSender.send(message);
     }
+
+    @Override
+    public void sendVerificationEmail(String email) {
+        String verifyToken = tokenService.generateToken(email, EXPIRATION_TIME);
+
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setFrom(senderEmailAddress);
+        message.setTo(email);
+        message.setSubject("Verify Email Address");
+
+        // Compose the email content
+        StringBuilder bodyBuilder = new StringBuilder();
+        bodyBuilder.append("Hello,\n\n")
+                .append("Thanks for signing up.\n")
+                .append("If you didn't initiate this request, you can ignore this email.\n")
+                .append("To confirm your email address, please click the link below:\n")
+                .append(appBaseUrl)
+                .append("/verify?token=")
+                .append(verifyToken)
+                .append("\n\n")
+                .append("Thank you,\n")
+                .append("Support Team");
+
+        message.setText(bodyBuilder.toString());
+        emailSender.send(message);
+    }
 }
 
