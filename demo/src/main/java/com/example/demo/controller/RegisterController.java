@@ -1,9 +1,11 @@
 package com.example.demo.controller;
 
 import com.example.demo.entity.Account;
+import com.example.demo.exception.AccountExistsException;
 import com.example.demo.service.account.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -24,8 +26,13 @@ public class RegisterController {
     }
 
     @PostMapping("/register")
-    public String registerAccount(Account account) {
-        accountService.registerAccount(account);
-        return "redirect:/login";
+    public String registerAccount(Account account, Model model) {
+        try {
+            accountService.registerAccount(account);
+            return "redirect:/login";
+        } catch (AccountExistsException e) {
+            model.addAttribute("errorMessage", e.getMessage());
+            return "register";
+        }
     }
 }

@@ -28,6 +28,11 @@
           <form th:action="@{/register}" method="post">
             <h3 class=" mb-3 pb-3" style="letter-spacing: 1px;">Create an account</h3>
 
+            <!-- Show error when errorMessage exists -->
+            <div th:if="${errorMessage}" class="alert alert-danger" role="alert">
+              <div th:text="${errorMessage}"></div>
+            </div>
+
             <div class="form-outline mb-4">
               <label class="form-label" for="email">Email</label>
               <input type="email" id="email" name="email" required autofocus class="form-control form-control-lg" />
