@@ -53,13 +53,20 @@ The app runs an in-memory H2 database and comes seeded with some sample users.
 ### Register page
 
 - URL: http://localhost:8080/register
-<img width="1465" alt="Screenshot 2023-07-26 at 1 49 51 PM" src="https://github.com/codebyamir/springboot3-springsecurity6-authentication/assets/54147931/4840f89f-aae0-4e4b-afd6-e656399ebb72">
+- Must add valid SMTP settings in `application.properties` in order for the Register form to send an email confirmation. 
+
+![image](https://github.com/codebyamir/springboot3-springsecurity6-authentication/assets/54147931/f22717bd-bc81-4732-9646-8a6ab3ddfd02)
+
+
 
 ### Forgot Password page
 
 - URL: http://localhost:8080/forgot
+- Must add valid SMTP settings in `application.properties` in order for the Forgot Password form to send a password reset email. 
 
 <img width="1460" alt="image" src="https://github.com/codebyamir/springboot3-springsecurity6-authentication/assets/54147931/37f121f9-ef15-4f00-9b52-724fbf3eab97">
+
+
 
 ### Reset Password page
 
@@ -69,7 +76,7 @@ The app runs an in-memory H2 database and comes seeded with some sample users.
 
 
 ## Password Reset Flow
-The password reset features uses a stateless token. The advantage of a stateless token is that it doesn't need to be saved to the database.  And it is still associated with an email address and expiration.  The disadvantage is that the link can be used multiple times prior to expiration.
+The password reset and email verify features use a stateless token. The advantage of a stateless token is that it doesn't need to be saved to the database.  And it is still associated with an email address and expiration.  The disadvantage is that the link can be used multiple times prior to expiration.
 
 1. User visits Forgot Password page at http://localhost:8080/forgot.
 2. User enters their email and clicks Submit.
@@ -77,8 +84,8 @@ The password reset features uses a stateless token. The advantage of a stateless
 4. A confirmation message is always shown to the user.  For security purposes, the message doesn't reveal if the email is associated with an account.
 5. The app sends an email with a password reset link.
 6. The user clicks on the link and they are taken to the Reset Password page.
-- If the token has expired or is invalid, the page will show an error.
-- If the token is valid, the page will allow the user to enter a new password. A hidden input field on the form is populated with the user's email address.
+  - If the token has expired or is invalid, the page will show an error.
+  - If the token is valid, the page will allow the user to enter a new password. A hidden input field on the form is populated with the user's email address.
 7. When the user submits the form, the app resets their password and redirects them back to the login page.
 
 
