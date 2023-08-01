@@ -53,14 +53,20 @@ The app runs an in-memory H2 database and comes seeded with some sample users.
 ### Register page
 
 - URL: http://localhost:8080/register
+- Must add valid SMTP settings in `application.properties` in order for the Register form to send an email confirmation. 
+
 ![image](https://github.com/codebyamir/springboot3-springsecurity6-authentication/assets/54147931/f22717bd-bc81-4732-9646-8a6ab3ddfd02)
+
 
 
 ### Forgot Password page
 
 - URL: http://localhost:8080/forgot
+- Must add valid SMTP settings in `application.properties` in order for the Forgot Password form to send a password reset email. 
 
 <img width="1460" alt="image" src="https://github.com/codebyamir/springboot3-springsecurity6-authentication/assets/54147931/37f121f9-ef15-4f00-9b52-724fbf3eab97">
+
+
 
 ### Reset Password page
 
