@@ -4,6 +4,7 @@ import com.example.demo.entity.Account;
 import com.example.demo.exception.AccountExistsException;
 import com.example.demo.service.account.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +22,12 @@ public class RegisterController {
     }
 
     @GetMapping("/register")
-    public String registerForm() {
+    public String registerForm(Authentication authentication) {
+        if (authentication != null && authentication.isAuthenticated()) {
+            // Redirect to home if logged in already
+            return "redirect:/home";
+        }
+
         return "register";
     }
 
