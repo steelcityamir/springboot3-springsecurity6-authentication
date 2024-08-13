@@ -72,7 +72,7 @@ The app runs an in-memory H2 database and comes seeded with some sample users.
 
 ### Reset Password page
 
-- URL: `http://localhost:8080/reset?token=`
+- URL: `http://localhost:8080/reset?token=<token>`
 
 <img width="1464" alt="image" src="https://github.com/codebyamir/springboot3-springsecurity6-authentication/assets/54147931/26d9f071-dde5-41d0-b6c0-2cb74268f9c5">
 
