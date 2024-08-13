@@ -1,3 +1,5 @@
+<img src="https://img.shields.io/badge/LANGUAGE-JAVA-f1941e.svg?style=for-the-badge" alt="Java"> <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="MIT License">
+
 # Starter app with Spring Boot 3.x and Spring Security 6.x
 This project is a starter application with authentication using Spring Boot 3.x and Spring Security 6.x.
 
